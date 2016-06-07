@@ -29,7 +29,16 @@ public class Main {
         }
     }
 
+    public static void usingLambdasInShortForm() {
+        List<Book> books = Books.all();
+        Collections.sort(books, (b1, b2) -> b1.getTitle().compareTo(b2.getTitle()));
+
+        for (Book book : books) {
+            System.out.println(book);
+        }
+    }
+
     public static void main(String[] args) {
-        usingLambdasInLongForm();
+        usingLambdasInShortForm();
     }
 }
