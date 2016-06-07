@@ -35,6 +35,12 @@ public class Main {
         books.forEach(book -> System.out.println(book));
     }
 
+    public static void usingMethodReferences() {
+        List<Book> books = Books.all();
+        Collections.sort(books, Comparator.comparing(Book::getTitle));
+        books.forEach(System.out::println);
+    }
+
     public static void main(String[] args) {
         usingLambdasInShortForm();
     }
